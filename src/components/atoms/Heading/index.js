@@ -7,7 +7,7 @@ export const HeadingPresenter = ({
   className,
   ...props
 }) => (
-  <tag
+  <Tag
     className={[styles.h, styles[`h${visualLevel}`], className].join(" ")}
     {...props}
   />
@@ -38,9 +38,9 @@ export const HeadingContainer = ({
 }) => {
   level = Math.max(0, Math.min(6, level));
   visualLevel = typeof visualLevel !== "undefined" ? visualLevel : level;
-  const Tag = `h${level}`;
+  const tag = `h${level}`;
 
-  return presenter({ Tag, visualLevel, ...props });
+  return presenter({ tag, visualLevel, ...props });
 };
 
 const Heading = (props) => (
